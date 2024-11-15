@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:3000/api/v1';
+const API_BASE_URL = 'https://car-management-server-ten.vercel.app/api/v1';
 
 // Create Axios instance
 export const api = axios.create({
@@ -25,8 +25,8 @@ api.interceptors.request.use(
 );
 
 // User endpoints
-export const signUp = (data) => api.post('user/signup', data);
-export const signIn = (data) => api.post('user/signin', data);
+export const signUp = (data) => api.post('/user/signup', data);
+export const signIn = (data) => api.post('/user/signin', data);
 
 // Product endpoints
 export const getProducts = () => api.get('/products/details');
