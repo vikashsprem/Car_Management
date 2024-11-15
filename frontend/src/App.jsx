@@ -31,7 +31,14 @@ function App() {
           <Routes>
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/page-not-found" element={<PageNotFound />} />
+            <Route
+              path="/page-not-found"
+              element={
+                <AuthenticatedRoute>
+                  <PageNotFound />
+                </AuthenticatedRoute>
+              }
+            />
             <Route
               path="/products"
               element={

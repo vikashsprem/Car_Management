@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://car-management-server-xi.vercel.app/api/v1';
+const API_BASE_URL = 'http://localhost:3000/api/v1';
 
 export const api = axios.create({
     baseURL: API_BASE_URL,
     headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: localStorage.getItem('token')
     },
 });
 
