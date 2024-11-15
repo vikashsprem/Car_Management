@@ -1,0 +1,22 @@
+import axios from 'axios';
+
+const API_BASE_URL = 'https://car-management-server-xi.vercel.app/api/v1';
+
+export const api = axios.create({
+    baseURL: API_BASE_URL,
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+});
+
+// User endpoints
+export const signUp = (data) => api.post('user/signup', data);
+export const signIn = (data) => api.post('user/signin', data);
+
+// Product endpoints
+export const getProducts = () => api.get('/products/details');
+export const getProductById = (id) => api.get(`/products/${id}`);
+export const createProduct = (data) => api.post('/products/create', data);
+export const updateProduct = (id, data) => api.put(`/products/edit/${id}`, data);
+export const deleteProduct = (id) => api.delete(`/products/delete/${id}`);
