@@ -26,36 +26,32 @@ app.get('/', (req, res) => {
 
 // Sign-in route
 app.get('/signin', async (req, res) => {
-    // try {
-    //     const { email, password } = req.body;
+    try {
+        const { email, password } = req.body;
 
-    //     // Find the user by email and password
-    //     const user = await User.findOne({ email, password })
+        // Find the user by email and password
+        const user = await User.findOne({ email, password })
 
-    //     if (!user) {
-    //         return res.status(403).json({
-    //             message: 'User not found'
-    //         })
-    //     }
+        if (!user) {
+            return res.status(403).json({
+                message: 'User not found'
+            })
+        }
 
-    //     // Generate the token
-    //     const token = jwt.sign({ user }, SECRET_KEY)
+        // Generate the token
+        const token = jwt.sign({ user }, SECRET_KEY)
 
-    //     res.status(200).json({
-    //         message: 'User has been logged in successfully',
-    //         token: token
-    //     })
-    // } catch (error) {
-    //     console.error(error)
-    //     res.status(500).json({
-    //         message: 'Something went wrong',
-    //         error: error.message
-    //     })
-    // }
-
-    res.status(200).json({
-        message: 'User has been logged in successfully',
-    })
+        res.status(200).json({
+            message: 'User has been logged in successfully',
+            token: token
+        })
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({
+            message: 'Something went wrong',
+            error: error.message
+        })
+    }
 })
 
 // Database connection and server start
