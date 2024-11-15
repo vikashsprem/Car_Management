@@ -7,26 +7,8 @@ require('dotenv').config();
 
 const app = express();
 
-// CORS configuration
-const corsOptions = {
-    origin: 'https://car-management-flame.vercel.app',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: ['Content-Type', 'Authorization'],
-};
-
 // Apply CORS middleware
-app.use(cors(corsOptions));
-
-// Handle preflight requests
-app.options('*', cors(corsOptions));
-
-// Middleware for setting headers (redundant if using CORS middleware properly)
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://car-management-flame.vercel.app'); // Match your frontend URL
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
-});
+app.use(cors());
 
 // JSON body parser
 app.use(express.json());
