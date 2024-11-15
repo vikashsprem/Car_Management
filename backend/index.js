@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 
 async function main() {
     try {
-        await mongoose.connect(process.env.VITE_MONGODB_URI)
+        await mongoose.connect(process.env.MONGODB_URI)
         console.log("Connected to the database")
     } catch (error) {
         console.error("Error connecting to the database", error)
