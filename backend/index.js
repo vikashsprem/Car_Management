@@ -7,26 +7,14 @@ require('dotenv').config();
 
 const app = express();
 
-const allowedOrigins = [
-    'https://car-management-flame.vercel.app', // Production frontend
-    'http://localhost:5473', // Development frontend
-];
-
 const corsOptions = {
-    origin: (origin, callback) => {
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    origin: 'http://localhost:5173',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
 };
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+
 
 app.use(express.json());
 
