@@ -1,5 +1,26 @@
 # Car Management API Overview
 
+Note: There ware some issue on deployment so i have recorded the video for that you can checkout the demo here: [Demo Link](https://drive.google.com/file/d/1rmYnt_gAYfeNqL-miqX7N-39mJw4x3T2/view?usp=sharing)
+
+## Setup in you local
+
+- Create .env and put the any random secret key.
+- Get the mongodb_url from website and put here
+
+```
+    git clone <url>
+
+// run the frontend
+    cd frontend
+    npm i
+    npm run dev
+
+// run the backend
+    cd backend
+    npm i
+    npm start
+```
+
 ## Base URL
 
 `https://car-management-flame.vercel.app/`
