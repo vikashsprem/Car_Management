@@ -7,8 +7,6 @@ require('dotenv').config();
 
 const app = express();
 
-const cors = require('cors');
-
 const allowedOrigins = [
     'https://car-management-flame.vercel.app', // Production frontend
     'http://localhost:5473', // Development frontend
