@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 // Sign-in route
-app.get('/signin', async (req, res) => {
+app.post('/signin', async (req, res) => {
     try {
         const { email, password } = req.body;
 
