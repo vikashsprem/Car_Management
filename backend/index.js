@@ -19,7 +19,9 @@ app.use('/api/v1/products', productRouter);
 
 // Test route
 app.get('/', (req, res) => {
-    res.send("Okay");
+    res.status(200).json({
+        message: 'User has been logged in successfully',
+    })
 });
 
 // Sign-in route
