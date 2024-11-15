@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://car-management-server-ten.vercel.app//api/v1';
+const API_BASE_URL = 'https://car-management-server-ten.vercel.app/api/v1';
 
 // Create Axios instance
 export const api = axios.create({
